@@ -11,7 +11,9 @@ import XCTest
 
 class GameAITests: XCTestCase {
     
-    
+    /*
+     WHEN A FAILURE OCCURS, BEGORE FIXING THE PROBLEM, BE SURE THAT YOU UNDERSTAND WHETHER THE BUG IS IN THE APP'S CODE OR THE TEST CODE. USE THE DEBUGGER IF NEEDED.
+ */
 //start testing for winning combinations
     func testWinCheckingVertical1() {
         var board = GameBoard()
@@ -52,6 +54,7 @@ class GameAITests: XCTestCase {
          - o x
          - - x
          */
+        
         try! board.place(mark: .x, on: (0, 2))
         try! board.place(mark: .o, on: (0, 1))
         try! board.place(mark: .x, on: (1, 2))
@@ -158,6 +161,7 @@ class GameAITests: XCTestCase {
         
     }
     
+    //do I have enough information to complete the following two functions?
     func testIncompleteGame() {
         let board = GameBoard()
         
@@ -165,14 +169,12 @@ class GameAITests: XCTestCase {
         XCTAssertTrue(!board.isFull)
         //assertion gameboard is full negative positive
         XCTAssertFalse(board.isFull)
-        
-        
     }
 
     func testCatsGame() {
         let board = GameBoard()
        
-        //if it is not won by x and it is not won by o then it is a cats game. 
+        //if it is not won by x and it is not won by o then it is a cats game.
         XCTAssertTrue(!game(board: board, isWonBy: .o))
         XCTAssertTrue(!game(board: board, isWonBy: .x))
     }
