@@ -11,6 +11,8 @@ import XCTest
 
 class GameAITests: XCTestCase {
     
+    
+//start testing for winning combinations
     func testWinCheckingVertical1() {
         var board = GameBoard()
         /*
