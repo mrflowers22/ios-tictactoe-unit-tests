@@ -170,6 +170,10 @@ class GameAITests: XCTestCase {
     }
 
     func testCatsGame() {
-        
+        let board = GameBoard()
+       
+        //if it is not won by x and it is not won by o then it is a cats game. 
+        XCTAssertTrue(!game(board: board, isWonBy: .o))
+        XCTAssertTrue(!game(board: board, isWonBy: .x))
     }
 }
